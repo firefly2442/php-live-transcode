@@ -1,6 +1,6 @@
 <?php
 
-require('init.inc.php');
+require('config.inc.php');
 
 
 //iterate through the media path and create links to create the stream for the appropriate files
