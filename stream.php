@@ -124,7 +124,7 @@ if (is_resource($process)) {
             echo $chunk;
 
             /* flush output */
-            if (ob_get_length()){            
+            if (ob_get_length()){
                 @ob_flush();
                 @flush();
                 @ob_end_flush();
