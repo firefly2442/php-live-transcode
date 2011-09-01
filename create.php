@@ -31,7 +31,7 @@ require('init.inc.php');
 <head>
 <meta charset="utf-8" />
 <title>Video and Audio Streaming</title>
-<script type="text/javascript" src="<?php echo BASE_URL; ?>/jquery-1.4.4.min.js"></script>
+<script type="text/javascript" src="<?php echo BASE_URL; ?>/jquery-1.6.2.min.js"></script>
 <script type="text/javascript" src="<?php echo BASE_URL; ?>/create.js"></script>
 <style type="text/css" media="screen">
 
