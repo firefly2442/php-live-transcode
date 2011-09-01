@@ -30,7 +30,7 @@ else {
 <head>
 <meta charset="utf-8" />
 <title>Video and Audio Streaming</title>
-<script src="<?php echo BASE_URL; ?>flowplayer/flowplayer-3.2.4.min.js"></script>
+<script src="<?php echo BASE_URL; ?>flowplayer/flowplayer-3.2.6.min.js"></script>
 <style type="text/css" media="screen">
 #flowplayer {
     display: block;
@@ -54,7 +54,7 @@ else {
     else if ($_POST['player'] == 'flash') {
         echo "<div id='flowplayer'></div>\n";
         echo "<script>\n";
-            echo "flowplayer('flowplayer', '".BASE_URL."flowplayer/flowplayer-3.2.5.swf', {clip: {url: '".$transcode_url."'}});";
+            echo "flowplayer('flowplayer', '".BASE_URL."flowplayer/flowplayer-3.2.7.swf', {clip: {url: '".$transcode_url."'}});";
         echo "</script>\n";
     }
 	?>
