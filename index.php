@@ -3,20 +3,41 @@
 require('config.inc.php');
 
 
-//iterate through the media path and create links to create the stream for the appropriate files
+function recursiveDirectory($path = '.', $level = 0) {
+	//iterate through the media path and create links to create the stream for the appropriate files
 
-//TODO: recursively list folders and contents  AND  only create links for files, not folders
+	// Only show media types specified in config.inc.php file
+	$media  = unserialize(MEDIATYPES);
+
+	$dh = @opendir($path);
+
+	while (false !== ($file = readdir($dh))) {
+		//Ignore directories back
+		if ($file != "." && $file != "..") {
+
+	        $spaces = str_repeat('&nbsp;', ($level * 4));
+
+			if (is_dir( "$path/$file")) {
+				//It's a directory, continue reading
+				echo "<strong>$spaces $file</strong><br>\n";
+				recursiveDirectory("$path/$file", ($level+1));
+			} else {
+				//Make sure it's an approved extension
+				if (in_array(substr($file, -4), $media)) {
+					echo "$spaces<a href='".BASE_URL."create.php/".$file."'/>".$file."</a><br>\n";
+				}
+			}
+		}
+	}
+
+	closedir($dh);
+}
+
+
 
 echo "<b>Stream File</b><br><br>";
 
-if ($handle = opendir(MEDIA_PATH)) {
-    while (false !== ($file = readdir($handle))) {
-		if ($file != "." && $file != "..")
-		{
-        	echo "<a href='".BASE_URL."create.php/".$file."'/>".$file."</a><br>\n";
-		}
-    }
-}
+recursiveDirectory(MEDIA_PATH)
 
 
 

@@ -40,5 +40,8 @@ define('DEBUG_LOG', '/srv/media/streamer.log'); /* very useful debug information
 define('MEDIA_PATH', '/srv/media'); /* the folder is accessible by create.php/<filename> subfolders are not supported! */
 /* make sure php can read it (openbasedir etc.) */
 define('BASE_URL', 'http://example.com/streamer'); /* full url to the installation */
+$mediatypes = array(".mkv", ".avi", ".mov");	/* This will limit the displaying and linking to files with these extensions on the index.php page. */
+define("MEDIATYPES", serialize($mediatypes));
+
 
 
