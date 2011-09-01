@@ -15,7 +15,7 @@ function recursiveDirectory($path = '.', $level = 0) {
 		//Ignore directories back
 		if ($file != "." && $file != "..") {
 
-	        $spaces = str_repeat('&nbsp;', ($level * 4));
+			$spaces = str_repeat('&nbsp;', ($level * 4));
 
 			if (is_dir( "$path/$file")) {
 				//It's a directory, continue reading
