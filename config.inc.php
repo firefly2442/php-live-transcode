@@ -21,11 +21,6 @@
  http://sixserv.org/2010/11/30/live-transcoding-for-video-and-audio-streaming/ 
    for more information. */
 
-/* you propaply want to adjust these settings for your system */
-
-define('SMARTY_LIBRARY', 'Smarty/Smarty.class.php');
-define('SMARTY_TEMPLATE', 'template/');
-define('SMARTY_COMPILE', 'template_compile/');
 
 /* you may want to specify absolute paths */
 define('FFMPEG', 'ffmpeg'); /* used for transcoding*/

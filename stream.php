@@ -43,10 +43,8 @@ foreach($arguments as $argument){
 
 /* validate arguments */
 function validation_error(){
-    global $smarty;
-    $smarty->assign('error', 'Some arguments do not validate.');
-    $smarty->display('error.tpl.html');
-    exit;
+    echo "There was an error in the validation of the stream arguments.";
+	exit;
 }
 if(!empty($args['vb']) && !is_numeric($args['vb'])) validation_error();
 if(!empty($args['ab']) && !is_numeric($args['ab'])) validation_error();
