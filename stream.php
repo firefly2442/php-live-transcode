@@ -91,6 +91,10 @@ if(!empty($args['size']))
 if(!empty($args['container']))
     $cmd .= " -f ".$args['container'];
 
+//add number of threads to use
+//This isn't supported by some codecs
+//$cmd .= " -threads ".FFMPEG_THREADS;
+
 if(!empty($args['audio_stream']))
     $cmd .= " -map 0.0:0.0 -map 0.".$args['audio_stream'].":0.1";
 
