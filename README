@@ -1,6 +1,12 @@
 PHP Live Transcode -- HTML5 and Flash streaming with live transcoding
 Copyright (C) 2010  Matthias -apoc- Hecker <http://apoc.cc>
 
+Forked by firefly2442
+8/31/11
+https://github.com/firefly2442/php-live-transcode
+
+
+
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
