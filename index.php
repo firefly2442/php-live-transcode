@@ -34,13 +34,22 @@ function recursiveDirectory($path = '.', $level = 0) {
 	closedir($dh);
 }
 
+?>
 
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>php-live-transcode</title>
+</head>
+<body>
 
-echo "<b>Stream File</b><br><br>";
+<h1>Stream Video File</h1>
+
+<?php
 
 recursiveDirectory(MEDIA_PATH)
-
-
 
 ?>
 
