@@ -6,6 +6,47 @@ Forked by firefly2442
 https://github.com/firefly2442/php-live-transcode
 
 
+Overview:
+
+This program uses ffmpeg to do live transcoding of video for display via
+HTML5 using either HTML5 video or Flash (using flowplayer).
+
+http://www.rivetcode.com
+
+Requirements:
+
+-Linux OS
+-PHP
+-Webserver (Apache is good)
+-ffmpeg
+
+Original article by "apoc" for creation of this tool:
+
+http://sixserv.org/2010/11/30/live-transcoding-for-video-and-audio-streaming/
+
+Installation:
+
+-Copy the folder to your web directory (usually /var/www/).
+-Edit the config.inc.php script, make sure to specify the media path
+ and that the read privileges are correct.
+
+Support:
+
+http://forums.rivetcode.com
+
+3rd Party:
+
+Images are from the Tango Desktop Project (version 0.8.90):
+Released under public domain
+
+http://tango.freedesktop.org
+
+Flowplayer is released under the GPLv3
+
+http://flowplayer.org
+
+
+License:
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -19,10 +60,3 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-
-For more information please consider the following article:
-
-http://sixserv.org/2010/11/30/live-transcoding-for-video-and-audio-streaming/ 
-
-
