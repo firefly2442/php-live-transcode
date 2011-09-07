@@ -36,30 +36,31 @@ require('init.inc.php');
 	<script type="text/javascript" src="create.js"></script>
 </head>
 <body>
+
     <h1>Create Stream</h1>
 
     <ul id="mediainfo">
-        <li><strong>Filename:</strong> <?php echo filename; ?></li>
-        <li><strong>Path:</strong> <?php echo path; ?></li>
-        <li><strong>Size:</strong> <?php echo size; ?> MByte</li>
+        <li><strong>Filename:</strong> <?php echo htmlentities(filename); ?></li>
+        <li><strong>Path:</strong> <?php echo htmlentities(path); ?></li>
+        <li><strong>Size:</strong> <?php echo htmlentities(size); ?> MByte</li>
 
-        <li><strong>Video Codec:</strong> <?php echo $mediainfo->video_codec; ?></li>
-        <li><strong>Video Bitrate:</strong> <?php echo kbit($mediainfo->video_bitrate)." kBit/s (".kbyte($mediainfo->video_bitrate)." kByte/s)"; ?></li>
+        <li><strong>Video Codec:</strong> <?php echo htmlentities($mediainfo->video_codec); ?></li>
+        <li><strong>Video Bitrate:</strong> <?php echo htmlentities(kbit($mediainfo->video_bitrate))." kBit/s (".htmlentities(kbyte($mediainfo->video_bitrate))." kByte/s)"; ?></li>
 
-        <li><strong>Audio Codec:</strong> <?php echo $mediainfo->audio_codec; ?></li>
-        <li><strong>Audio Bitrate:</strong> <?php echo kbit($mediainfo->audio_bitrate)." kBit/s (".kbyte($mediainfo->audio_bitrate)." kByte/s)"; ?></li>
-        <li><strong>Audio Rate:</strong> <?php echo $mediainfo->audio_rate; ?> Hz</li>
-        <li><strong>Audio Streams:</strong> <?php echo $mediainfo->audio_streams; ?></li>
+        <li><strong>Audio Codec:</strong> <?php echo htmlentities($mediainfo->audio_codec); ?></li>
+        <li><strong>Audio Bitrate:</strong> <?php echo htmlentities(kbit($mediainfo->audio_bitrate))." kBit/s (".htmlentities(kbyte($mediainfo->audio_bitrate))." kByte/s)"; ?></li>
+        <li><strong>Audio Rate:</strong> <?php echo htmlentities($mediainfo->audio_rate); ?> Hz</li>
+        <li><strong>Audio Streams:</strong> <?php echo htmlentities($mediainfo->audio_streams); ?></li>
 
-        <li><strong>Width:</strong> <?php echo $mediainfo->width; ?></li>
-        <li><strong>Height:</strong> <?php echo $mediainfo->height; ?></li>
+        <li><strong>Width:</strong> <?php echo htmlentities($mediainfo->width); ?></li>
+        <li><strong>Height:</strong> <?php echo htmlentities($mediainfo->height); ?></li>
 
-        <li><strong>FPS:</strong> <?php echo $mediainfo->fps; ?></li>
-        <li><strong>Aspect:</strong> <?php echo $mediainfo->aspect; ?></li>
+        <li><strong>FPS:</strong> <?php echo htmlentities($mediainfo->fps); ?></li>
+        <li><strong>Aspect Ratio:</strong> <?php echo htmlentities($mediainfo->aspect); ?></li>
     </ul>
 
 
-    <form name="create_form" method="POST" action="<?php echo BASE_URL . "player.php".$_SERVER['PATH_INFO']; ?>">
+    <form name="create_form" method="POST" action="player.php?media=<?php echo htmlentities($_GET['media']); ?>">
         <label for="player">Select Player Technology</label>
         <select name="player" id="player">
             <option value="html5">HTML5</option>
