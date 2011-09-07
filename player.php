@@ -11,7 +11,7 @@ foreach($_POST as $key=>$value){
 $transcode_url = "stream.php/".implode(';', $transcode_args);
 $transcode_url .= '/'.basename($mediafile);
 
-if($_POST['container']=='ogg' && $mediatype == 'video')
+if($_POST['container'] == 'ogg' && $mediatype == 'video')
     $transcode_url .= '.ogv';
 else
     $transcode_url .= '.'.$_POST['container'];
@@ -42,7 +42,7 @@ else {
 	</style>
 </head>
 <body>
-    <h1>Stream</h1>
+    <h1>Video Stream</h1>
 
     <?php
 	if ($_POST['player'] == 'html5') {

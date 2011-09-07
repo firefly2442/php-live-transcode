@@ -97,7 +97,7 @@ if(!empty($_SERVER["PATH_INFO"])){
 	}
 
 	/* identify the mediafile with mplayer */
-	require 'classlib/MPlayerIdentify.class.php';
+	require ("classlib/MPlayerIdentify.class.php");
 	$mediainfo = new MPlayerIdentify($mediafile);
 	if(empty($mediainfo->audio_codec)){
 		errorMessage('MPlayer has not identified the file you provided. ('.htmlentities($mediafile).')');
