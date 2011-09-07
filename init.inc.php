@@ -33,10 +33,10 @@ define('P_STDERR', 2);
 
 /* define some modifiers for bitrate conversion */
 function kbyte($bits){
-    return round($bits/8/1024,2);
+    return round($bits/8/1024, 2);
 }
 function kbit($bits){
-    return round($bits/1000,2);
+    return round($bits/1000, 2);
 }
 
 
@@ -81,7 +81,7 @@ if(!empty($_SERVER["PATH_INFO"])){
     $mediafile = MEDIA_PATH . '/' . basename($_SERVER["PATH_INFO"]);
 
 	if(strstr($mediafile, '..') !== false){ /* directory traversal */
-		errorMessage("Illegal characters in directory traversal.");
+		errorMessage("Illegal characters in directory traversal."); //security feature
 	}
 	$mediafilename = basename($mediafile);
 	preg_match('/\.([^\.]+)$/', $mediafilename, $match);
