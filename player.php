@@ -58,6 +58,9 @@ else {
         echo "</script>\n";
     }
 	?>
+
+<br><hr>
+<center><a href="http://www.rivetcode.com">php-live-transcode</a>
+<br>Version: <?php echo $version;?></center>
 </body>
 </html>
-

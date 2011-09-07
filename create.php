@@ -200,8 +200,10 @@ require_once("init.inc.php");
 
     </form>
 
+<br><hr>
+<center><a href="http://www.rivetcode.com">php-live-transcode</a>
+<br>Version: <?php echo $version;?></center>
 </body>
 </html>
-
 
 
