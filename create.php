@@ -26,87 +26,14 @@ require('init.inc.php');
 
 ?>
 
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8" />
-<title>Video and Audio Streaming</title>
-<script type="text/javascript" src="<?php echo BASE_URL; ?>/jquery-1.6.2.min.js"></script>
-<script type="text/javascript" src="<?php echo BASE_URL; ?>/create.js"></script>
-<style type="text/css" media="screen">
-
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
-a, a:hover, a:visited { color: grey; }
-
-h1 {
-
-}
-
-input {
-    border: 1px solid #999;
-    background-color: #e7e7e7;
-}
-
-#buttons input {
-    font-size: 14px;
-    font-weight: bold;
-
-    padding: 5px;
-}
-
-label {
-    display: block;
-    margin-top: 8px;
-    font-weight: bold;
-}
-
-#expert_toggle {
-    padding: 8px 8px 0px 0px;
-}
-
-#expert {
-    display: table-cell;
-    border: 1px solid #999;
-    padding: 5px 50px 5px 5px;
-    background-color: #ededed;
-}
-
-#expert h2 {
-    margin: 0 0 10px 0;
-}
-
-#ab, #vb {
-    width: 60px;
-}
-
-#ab_byte, #vb_byte {
-    display: inline;
-    font-style: italic;
-    font-size: 10px;
-}
-
-#mediainfo {
-    list-style-type: square;
-    margin-left: 15px;
-    padding-left: 10px;
-}
-
-#create_stream {
-    margin-top: 8px;
-}
-
-#video_row {
-    display: table-cell;
-}
-
-#audio_row {
-    display: table-cell;
-    padding-left: 15px;
-}
-
-</style>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<title>php-live-transcode</title>
+	<script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+	<script type="text/javascript" src="create.js"></script>
 </head>
 <body>
     <h1>Create Stream</h1>
