@@ -114,6 +114,10 @@ if(isset($_GET["media"]) && $_GET["media"] != ""){
 		$mediatype = "audio";
 	else
 		$mediatype = "video";
-	
+}
+else
+{
+	echo "<p class='error'>You didn't specify a file.</p>";
+	exit();
 }
 
