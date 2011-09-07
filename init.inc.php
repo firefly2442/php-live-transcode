@@ -22,7 +22,7 @@
 */
 
 
-require 'config.inc.php';
+require_once ("config.inc.php");
 
 /* just for internal use */
 define('P_STDIN', 0);

@@ -1,6 +1,6 @@
 <?php
 
-require('init.inc.php');
+require_once("init.inc.php");
 
 $transcode_args = array();
 foreach($_POST as $key=>$value){

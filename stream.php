@@ -30,7 +30,7 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 header("Cache-Control: no-cache"); 
 header("Pragma: no-cache");
 
-require 'init.inc.php';
+require_once("init.inc.php");
 
 /* parse path arguments */
 $args = array();
