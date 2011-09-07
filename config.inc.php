@@ -44,3 +44,5 @@ $mediatypes = array(".mkv", ".avi", ".mov");	/* This will limit the displaying a
 define("MEDIATYPES", serialize($mediatypes));
 
 
+// php-live-transcode version (you don't need to change this)
+$version = "0.1";
