@@ -84,8 +84,10 @@ if(isset($_GET["media"]) && $_GET["media"] != ""){
 		errorMessage("Illegal characters in directory traversal."); //security feature
 	}
 	$mediafilename = basename($mediafile);
-	preg_match('/\.([^\.]+)$/', $mediafilename, $match);
-	$mediaext = $match[1];
+	if (preg_match('/\.([^\.]+)$/', $mediafilename, $match) >= 2)
+	{
+		$mediaext = $match[1];
+	}
 	if(!file_exists($mediafile)){
 		$orig_mediafile = $mediafile;
 
