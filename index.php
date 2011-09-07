@@ -24,7 +24,8 @@ function recursiveDirectory($path = '.', $level = 0) {
 			} else {
 				//Make sure it's an approved extension
 				if (in_array(substr($file, -4), $media)) {
-					echo "$spaces<a href='".BASE_URL."create.php/".$file."'/>".$file."</a><br>\n";
+					$folder = str_replace(MEDIA_PATH, "", $path);
+					echo "$spaces<a href=\"create.php?media=".$folder."/".$file."\"/>".$file."</a><br>\n";
 				}
 			}
 		}

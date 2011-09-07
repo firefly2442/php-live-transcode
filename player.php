@@ -8,7 +8,7 @@ foreach($_POST as $key=>$value){
         $transcode_args[] = $key.':'.$value;
     }
 }
-$transcode_url = BASE_URL."stream.php/".implode(';', $transcode_args);
+$transcode_url = "stream.php/".implode(';', $transcode_args);
 $transcode_url .= '/'.basename($mediafile);
 
 if($_POST['container']=='ogg' && $mediatype == 'video')
@@ -26,18 +26,20 @@ else {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="utf-8" />
-<title>Video and Audio Streaming</title>
-<script src="<?php echo BASE_URL; ?>flowplayer/flowplayer-3.2.6.min.js"></script>
-<style type="text/css" media="screen">
-#flowplayer {
-    display: block;
-    width: <?php echo $size[0]; ?>px;
-    height: <?php echo $size[1]; ?>px;
-}
-</style>
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<title>php-live-transcode</title>
+	<script src="flowplayer/flowplayer-3.2.6.min.js"></script>
+
+	<style type="text/css" media="screen">
+	#flowplayer {
+		display: block;
+		width: <?php echo $size[0]; ?>px;
+		height: <?php echo $size[1]; ?>px;
+	}
+	</style>
 </head>
 <body>
     <h1>Stream</h1>
@@ -54,7 +56,7 @@ else {
     else if ($_POST['player'] == 'flash') {
         echo "<div id='flowplayer'></div>\n";
         echo "<script>\n";
-            echo "flowplayer('flowplayer', '".BASE_URL."flowplayer/flowplayer-3.2.7.swf', {clip: {url: '".$transcode_url."'}});";
+            echo "flowplayer('flowplayer', 'flowplayer/flowplayer-3.2.7.swf', {clip: {url: '".$transcode_url."'}});";
         echo "</script>\n";
     }
 	?>
