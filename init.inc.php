@@ -76,9 +76,9 @@ if ($instances > FFMPEG_MAX_INSTANCES){
 }
 
 
-/* gather mediafile from path */
-if(!empty($_SERVER["PATH_INFO"])){
-    $mediafile = MEDIA_PATH . '/' . basename($_SERVER["PATH_INFO"]);
+/* gather mediafile */
+if(isset($_GET["media"]) && $_GET["media"] != ""){
+    $mediafile = MEDIA_PATH . $_GET["media"];
 
 	if(strstr($mediafile, '..') !== false){ /* directory traversal */
 		errorMessage("Illegal characters in directory traversal."); //security feature
