@@ -109,7 +109,6 @@ if(isset($_GET["media"]) && $_GET["media"] != ""){
 	define('filename', basename($mediafile));
 	define('path', dirname($mediafile));
 	define('size', round(filesize($mediafile) / 1024 / 1024, 2));
-	//$mediainfo
 
 	if(empty($mediainfo->video_codec))
 		$mediatype = "audio";
