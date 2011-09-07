@@ -93,7 +93,7 @@ if(isset($_GET["media"]) && $_GET["media"] != ""){
 		$mediafile = preg_replace('/\.[^\.]+$/','',$mediafile);
 		if(!file_exists($mediafile)){
 		    errorMessage("Mediafile does not exist. (".htmlentities($orig_mediafile).")");
-		} /* continue in flow */    //define('FFMPEG_VERSION', $ffmpeg_version[1]); //TODO: check if this is needed
+		}
 	}
 
 	/* identify the mediafile with mplayer */
