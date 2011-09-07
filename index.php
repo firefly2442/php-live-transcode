@@ -19,7 +19,7 @@ function recursiveDirectory($path = '.', $level = 0) {
 
 			if (is_dir( "$path/$file")) {
 				//It's a directory, continue reading
-				echo "<strong>$spaces $file</strong><br>\n";
+				echo "<img src='images/folder.png' alt='Folder' title='Folder'><strong>$spaces $file</strong><br>\n";
 				recursiveDirectory("$path/$file", ($level+1));
 			} else {
 				//Make sure it's an approved extension
