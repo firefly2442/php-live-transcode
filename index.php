@@ -9,7 +9,7 @@ function recursiveDirectory($path = '.', $level = 0) {
 	// Only show media types specified in config.inc.php file
 	$media  = unserialize(MEDIATYPES);
 
-	$dh = @opendir($path);
+	$dh = opendir($path) or die("Unable to open directory.");
 
 	while (false !== ($file = readdir($dh))) {
 		//Ignore directories back
