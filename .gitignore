@@ -1,2 +1,3 @@
 .htaccess
 /logs/*.log
+*~
