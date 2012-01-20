@@ -10,6 +10,7 @@ foreach($_POST as $key=>$value){
 }
 $transcode_url = "stream.php/".implode(';', $transcode_args);
 $transcode_url .= '/'.basename($mediafile);
+$transcode_url .= "?media=" . $_GET['media'];
 
 if($_POST['container'] == 'ogg' && $mediatype == 'video')
     $transcode_url .= '.ogv';
