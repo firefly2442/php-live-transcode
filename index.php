@@ -1,6 +1,6 @@
 <?php
 
-require_once("config.inc.php");
+require_once("includes/checklogin.inc.php");
 
 
 function recursiveDirectory($path = '.', $level = 0) {

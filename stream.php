@@ -22,6 +22,9 @@
 */
 
 
+require_once("includes/checklogin.inc.php");
+
+
 /* script execution settings */
 set_time_limit(0);
 ignore_user_abort(true); /* do not terminate script execution if disconnect */
@@ -30,7 +33,7 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 header("Cache-Control: no-cache"); 
 header("Pragma: no-cache");
 
-require_once("init.inc.php");
+require_once("includes/init.inc.php");
 
 /* parse path arguments */
 $args = array();

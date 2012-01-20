@@ -21,7 +21,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-require_once("init.inc.php");
+require_once("includes/init.inc.php");
 
 ?>
 

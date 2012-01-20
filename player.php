@@ -1,6 +1,8 @@
 <?php
 
-require_once("init.inc.php");
+require_once("includes/checklogin.inc.php");
+
+require_once("includes/init.inc.php");
 
 $transcode_args = array();
 foreach($_POST as $key=>$value){
