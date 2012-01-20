@@ -67,6 +67,6 @@ else {
 
 <br><hr>
 <center><a href="http://www.rivetcode.com">php-live-transcode</a>
-<br>Version: <?php echo $version;?></center>
+<br>Version: <?php echo VERSION;?></center>
 </body>
 </html>
