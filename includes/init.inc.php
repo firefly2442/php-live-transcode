@@ -21,6 +21,7 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+require_once("checklogin.inc.php");
 
 require_once ("config.inc.php");
 
