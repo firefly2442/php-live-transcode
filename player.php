@@ -8,7 +8,8 @@ foreach($_POST as $key=>$value){
         $transcode_args[] = $key.':'.$value;
     }
 }
-$transcode_url = "stream.php/".implode(';', $transcode_args);
+//BASE_URL is required otherwise it won't work!
+$transcode_url = BASE_URL . "stream.php/".implode(';', $transcode_args);
 $transcode_url .= '/'.basename($mediafile);
 $transcode_url .= "?media=" . $_GET['media'];
 
@@ -57,7 +58,7 @@ else {
     else if ($_POST['player'] == 'flash') {
         echo "<div id='flowplayer'></div>\n";
         echo "<script>\n";
-            echo "flowplayer('flowplayer', 'flowplayer/flowplayer-3.2.7.swf', {clip: {url: '".$transcode_url."'}});";
+            echo "flowplayer('flowplayer', '".BASE_URL."flowplayer/flowplayer-3.2.7.swf', {clip: {url: '".$transcode_url."'}});";
         echo "</script>\n";
     }
 	?>
