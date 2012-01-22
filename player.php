@@ -54,6 +54,7 @@ else {
 	</div>
 
     <?php
+	//http://diveintohtml5.info/video.html
 	if ($_POST['player'] == 'html5') {
         if ($mediatype == "video") {
             echo "<video src='".$transcode_url."' width=".$size[0]." height=".$size[1]." preload controls> your browser must support html5/video tag</video>\n";
