@@ -1,3 +1,4 @@
 .htaccess
 /logs/*.log
 *~
+/images/screenshots/*.jpg
