@@ -40,6 +40,29 @@ function kbit($bits){
     return round($bits/1000, 2);
 }
 
+function secondsToString($seconds) {
+	$units = array(
+            "hour"   =>      3600,
+            "minute" =>        60,
+            "second" =>         1,
+    );
+
+	// specifically handle zero
+    if ( $seconds == 0 ) return "0 seconds";
+
+    $s = "";
+
+    foreach ( $units as $name => $divisor ) {
+        if ( $quot = intval($seconds / $divisor) ) {
+            $s .= "$quot $name";
+            $s .= (abs($quot) > 1 ? "s" : "") . ", ";
+            $seconds -= $quot * $divisor;
+        }
+    }
+
+    return substr($s, 0, -2);
+}
+
 
 /* just a very simple debug logger */
 function dbg($message)

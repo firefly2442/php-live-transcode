@@ -114,6 +114,7 @@ require_once("includes/init.inc.php");
     <ul id="mediainfo">
         <li><strong>Filename:</strong> <?php echo htmlentities(filename); ?></li>
         <li><strong>Path:</strong> <?php echo htmlentities(path); ?></li>
+		<li><strong>Length:</strong> <?php echo secondsToString(htmlentities($mediainfo->length)); ?></li>
         <li><strong>Size:</strong> <?php echo htmlentities(size); ?> MByte</li>
 
         <li><strong>Video Codec:</strong> <?php echo htmlentities($mediainfo->video_codec); ?></li>
