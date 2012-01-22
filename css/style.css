@@ -12,12 +12,6 @@ body
 	background-color: #FFFFFF;
 }
 
-table {
-	border-style: outset;
-	margin-right:auto;
-	margin-left:auto;
-}
-
 p.error {
 	color: red;
 	text-align: center;
@@ -85,6 +79,9 @@ label {
     padding-left: 15px;
 }
 
+#codecs {
+	text-align: left;
+}
 
 #header-nav {
 	font-size: 150%;

@@ -49,14 +49,32 @@ require_once("includes/init.inc.php");
 			<tr>
 				<th>Codec</th><th>Browser Supported</th>
 			</tr>
-				<tr><td>MPEG-4</td><td><div id="mpeg4"></div></td></tr>
-				<tr><td>H264</td><td><div id="h264"></div></td></tr>
-				<tr><td>Theora</td><td><div id="theora"></div></td></tr>
-				<tr><td>Webm</td><td><div id="webm"></div></td></tr>
+				<tr><td>MPEG-4</td><td>
+					<div id="mpeg4"><img src="./images/positive.png" alt="Supported" title="Supported" /></div>
+					<div id="mpeg4-unsupported"><img src="./images/negative.png" alt="Unsupported" title="Unsupported" /></div>
+				</td></tr>
+				<tr><td>H264</td><td>
+					<div id="h264"><img src="./images/positive.png" alt="Supported" title="Supported" /></div>
+					<div id="h264-unsupported"><img src="./images/negative.png" alt="Unsupported" title="Unsupported" /></div>
+				</td></tr>
+				<tr><td>Theora</td><td>
+					<div id="theora"><img src="./images/positive.png" alt="Supported" title="Supported" /></div>
+					<div id="theora-unsupported"><img src="./images/negative.png" alt="Unsupported" title="Unsupported" /></div>
+				</td></tr>
+				<tr><td>Webm</td><td>
+					<div id="webm"><img src="./images/positive.png" alt="Supported" title="Supported" /></div>
+					<div id="webm-unsupported"><img src="./images/negative.png" alt="Unsupported" title="Unsupported" /></div>
+				</td></tr>
 		</table>
 	</div>
 
 	<script>
+		//default all to unsupported
+		$("#mpeg4").hide();
+		$("#h264").hide();
+		$("#theora").hide();
+		$("#webm").hide();
+
 		//http://diveintohtml5.info/video.html
 		//check for browser codec support
 		var testEl = document.createElement("video"), mpeg4, h264, theora, webm;
@@ -64,26 +82,30 @@ require_once("includes/init.inc.php");
 		    // Check for MPEG-4 support
 		    var typeStr = testEl.canPlayType('video/mp4; codecs="mp4v.20.8"');
 			if (typeStr !== "") {
-				$("#mpeg4").text("true");
+				$("#mpeg4").show();
+				$("#mpeg4-unsupported").hide();
 			}
 
 		    // Check for h264 support
 		    typeStr = (testEl.canPlayType('video/mp4; codecs="avc1.42E01E"') || testEl.canPlayType('video/mp4; codecs="avc1.42E01E, mp4a.40.2"'))
 			if (typeStr !== "") {
-				$("#h264").text("true");
+				$("#h264").show();
+				$("#h264-unsupported").hide();
 			}
 
 			// Check for OGG theora support
 			typeStr = testEl.canPlayType('video/ogg; codecs="theora"')
 			if (typeStr !== "") {
-				$("#theora").text("true");
+				$("#theora").show();
+				$("#theora-unsupported").hide();
 			}
 
 		    // Check for Webm support
 			//http://www.webmproject.org/code/specs/container/
 		    typeStr = testEl.canPlayType('video/webm; codecs="vp8, vorbis"'); //TODO: is the vorbis codec necessary here? does it check for one or the other?
 			if (typeStr !== "") {
-				$("#webm").text("true");
+				$("#webm").show();
+				$("#webm-unsupported").hide();
 			}
 		}
 	</script>
