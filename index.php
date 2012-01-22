@@ -48,6 +48,10 @@ function recursiveDirectory($path = '.', $level = 0) {
 
 <h1>Stream Video File</h1>
 
+<div id="header-nav">
+	<p><u>Select Video</u> -> Pick Decoding Settings -> Watch Video</p>
+</div>
+
 <?php
 
 recursiveDirectory(MEDIA_PATH)

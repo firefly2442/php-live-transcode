@@ -49,6 +49,10 @@ else {
 <body>
     <h1>Video Stream</h1>
 
+	<div id="header-nav">
+		<p><a href="index.php">Select Video</a> -> <a href="create.php?media=<?php echo $_GET['media']; ?>">Pick Decoding Settings</a> -> <u>Watch Video</u></p>
+	</div>
+
     <?php
 	if ($_POST['player'] == 'html5') {
         if ($mediatype == "video") {

@@ -41,6 +41,9 @@ require_once("includes/init.inc.php");
 
     <h1>Create Stream</h1>
 
+	<div id="header-nav">
+		<p><a href="index.php">Select Video</a> -> <u>Pick Decoding Settings</u> -> Watch Video</p>
+	</div>
 	<div id="codecs">
 		<table border="0">
 			<tr>

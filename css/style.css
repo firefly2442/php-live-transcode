@@ -86,6 +86,10 @@ label {
 }
 
 
+#header-nav {
+	font-size: 150%;
+}
+
 
 a:link    {color:#0066FF}
 a:visited {color:#0066FF}
