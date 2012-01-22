@@ -19,6 +19,7 @@ Requirements:
 -PHP
 -Webserver (Apache is good)
 -ffmpeg
+-mplayer
 
 Original article by "apoc" for creation of this tool:
 
@@ -27,8 +28,11 @@ http://sixserv.org/2010/11/30/live-transcoding-for-video-and-audio-streaming/
 Installation:
 
 -Copy the folder to your web directory (usually /var/www/).
--Edit the config.inc.php script, make sure to specify the media path
+-Edit the includes/config.inc.php script, make sure to specify the media path
  and that the read privileges are correct.
+-Make sure that shell_exec() is enabled.
+-Make sure the images/screenshots/ folder is writeable by your server (probably
+ 'www-data' user or something for Apache)
 
 Support:
 
