@@ -17,6 +17,11 @@ p.error {
 	text-align: center;
 }
 
+p.logout {
+	color: green;
+	text-align: center;
+}
+
 input {
     border: 1px solid #999;
     background-color: #e7e7e7;

@@ -38,9 +38,11 @@ session_destroy();
 
 	<?php
 	if (isset($error) && $error == true)
-		echo "<p class='error'>Error, password is incorrect.<br>Entries are cAsESEnsITiVE, do you have your capslock key on?...</p>";
+		echo "<p class='error'>Error, password is incorrect.<br>Entries are cAsESEnsITiVE, do you have your capslock key on?...</p>\n";
 	if (isset($_GET['status']) && $_GET['status'] == "session")
-		echo "<p class='error'>Your session has timed out, please re-login.</p>";
+		echo "<p class='error'>Your session has timed out, please re-login.</p>\n";
+	if (isset($_GET['status']) && $_GET['status'] == "logout")
+		echo "<p class='logout'>Successfully logged out.</p>\n";
 	?>
 	<center>
 	<form action="authenticate.php" method="POST" name="login">

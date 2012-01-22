@@ -43,6 +43,7 @@ require_once("includes/pull-screenshots.inc.php");
 
     <h1>Create Stream</h1>
 
+	<a href="authenticate.php?status=logout"><img src="./images/logout.png" title="Logout" alt="Logout" /> Logout</a>
 	<div id="header-nav">
 		<p><a href="index.php">Select Video</a> -> <u>Pick Decoding Settings</u> -> Watch Video</p>
 	</div>

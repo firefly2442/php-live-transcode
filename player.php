@@ -49,6 +49,7 @@ else {
 <body>
     <h1>Video Stream</h1>
 
+	<a href="authenticate.php?status=logout"><img src="./images/logout.png" title="Logout" alt="Logout" /> Logout</a>
 	<div id="header-nav">
 		<p><a href="index.php">Select Video</a> -> <a href="create.php?media=<?php echo $_GET['media']; ?>">Pick Decoding Settings</a> -> <u>Watch Video</u></p>
 	</div>
