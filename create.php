@@ -25,6 +25,8 @@ require_once("includes/checklogin.inc.php");
 
 require_once("includes/init.inc.php");
 
+require_once("includes/pull-screenshots.inc.php");
+
 ?>
 
 <!DOCTYPE html>
@@ -44,6 +46,27 @@ require_once("includes/init.inc.php");
 	<div id="header-nav">
 		<p><a href="index.php">Select Video</a> -> <u>Pick Decoding Settings</u> -> Watch Video</p>
 	</div>
+
+	<?php
+
+	if (THUMBNAILS > 0)
+	{
+		//check the permissions to make sure we can write to screenshots directory
+		if (is_writeable("./images/screenshots/")) {
+			//generate preview screenshots from the video
+			saveScreenshots($mediainfo);
+
+			//display images
+			for ($i = 1; $i < THUMBNAILS+1; $i++) {
+				echo "<img src='./images/screenshots/".filename."_".$i.".jpg' />\n";
+			}
+		} else {
+			echo "<p>Insufficient privileges to generate thumbnail preview images.</p>\n";
+		}
+	}
+
+	?>
+
 	<div id="codecs">
 		<table border="0">
 			<tr>

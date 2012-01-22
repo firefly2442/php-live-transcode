@@ -66,6 +66,10 @@ define("BASE_URL", "http://yourdomainhere.com/php-live-transcode/");
 	an htaccess file. */
 define("PASSWORD", "secret");
 
+/* generate number of thumbnails for preview, can be taxing on CPU
+	must be numeric value, set to 0 for no thumbnails */
+define("THUMBNAILS", "6");
+
 
 /* php-live-transcode version (you don't need to change this) */
 define("VERSION", "0.1");
