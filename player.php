@@ -34,6 +34,7 @@ else {
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="shortcut icon" href="favicon.ico" >
 	<title>php-live-transcode</title>
 	<script src="flowplayer/flowplayer-3.2.6.min.js"></script>
 

@@ -32,6 +32,7 @@ require_once("includes/init.inc.php");
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
+	<link rel="shortcut icon" href="favicon.ico" >
 	<title>php-live-transcode</title>
 	<script type="text/javascript" src="./javascript/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="./javascript/create.js"></script>
