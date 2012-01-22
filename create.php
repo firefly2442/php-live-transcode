@@ -129,7 +129,13 @@ require_once("includes/init.inc.php");
         <li><strong>Height:</strong> <?php echo htmlentities($mediainfo->height); ?></li>
 
         <li><strong>FPS:</strong> <?php echo htmlentities($mediainfo->fps); ?></li>
-        <li><strong>Aspect Ratio:</strong> <?php echo htmlentities($mediainfo->aspect); ?></li>
+        <li><strong>Aspect Ratio:</strong> <?php echo htmlentities($mediainfo->aspect);
+
+		if ($mediainfo->aspect_string != null) {
+			echo " (" . htmlentities($mediainfo->aspect_string) . ")";
+		}
+
+		?></li>
     </ul>
 
 

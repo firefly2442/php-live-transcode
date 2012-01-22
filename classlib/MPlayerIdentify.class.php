@@ -15,6 +15,9 @@ class MPlayerIdentify
 
     var $fps = null;
     var $aspect = null;
+	var $aspect_string = null;
+
+	var $length = 0;
 
     private static $map = array(
         'ID_VIDEO_CODEC' => 'video_codec',
@@ -28,11 +31,14 @@ class MPlayerIdentify
         'ID_VIDEO_HEIGHT' => 'height',
 
         'ID_VIDEO_FPS' => 'fps',
-        'ID_VIDEO_ASPECT' => 'aspect'
+        'ID_VIDEO_ASPECT' => 'aspect',
+
+		'ID_LENGTH' => 'length'
     );
 
     function MPlayerIdentify($filename)
     {
+		//https://www.linux.com/news/software/applications/292309-conqueror-video-on-linux-with-mplayer-
         $identify = shell_exec(
           MPLAYER.' -vo null -ao null -frames 1 -identify "'.$filename.'"|tac');
 
@@ -48,9 +54,13 @@ class MPlayerIdentify
             }
         }
 
-        /* some post processing */
-        if ($this->aspect == '1.3333') $this->aspect = '4:3';
-        if ($this->aspect == '1.77') $this->aspect = '16:9';
+		//If it's within +/- .03 of the aspect ratio, save special string
+		if ($this->aspect > 1.74 && $this->aspect < 1.8) {
+			$this->aspect_string = "16:9";
+		} else if ($this->aspect > 1.3 && $this->aspect < 1.36) {
+			$this->aspect_string = "4:3";
+		}
+
     }
 }
 
