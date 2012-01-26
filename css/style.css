@@ -12,6 +12,18 @@ body
 	background-color: #FFFFFF;
 }
 
+#folder {
+	color:#0066FF;
+	margin:5px;
+	cursor:pointer;
+}
+
+#box {
+	padding:10px;
+	border:5px solid gray;
+	margin:0px;
+}
+
 p.error {
 	color: red;
 	text-align: center;
