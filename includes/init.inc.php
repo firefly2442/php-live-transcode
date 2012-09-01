@@ -82,12 +82,12 @@ function errorMessage($message)
 
 
 /* test for ffmpeg and mplayer */
-if(!preg_match('/MPlayer (\S+)/',shell_exec(MPLAYER),$mplayer_version)){
+if(!preg_match('/mplayer (\S+)/', strtolower(shell_exec(MPLAYER)), $mplayer_version)){
     errorMessage("MPlayer not found. (".MPLAYER.")");
 }
 define('MPLAYER_VERSION', $mplayer_version[1]);
 
-if(!preg_match('/FFmpeg (\S+)/',shell_exec(FFMPEG.' -version'),$ffmpeg_version)){
+if(!preg_match('/ffmpeg (\S+)/', strtolower(shell_exec(FFMPEG.' -version')) ,$ffmpeg_version)){
      errorMessage("FFmpeg not found. (".FFMPEG.")");
 }
 define('FFMPEG_VERSION', $ffmpeg_version[1]);
