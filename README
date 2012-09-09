@@ -16,10 +16,13 @@ http://www.rivetcode.com
 Requirements:
 
 -Linux OS
--PHP
+-PHP (proc_open() must be enabled)
 -Webserver (Apache is good)
 -ffmpeg
 -mplayer
+-The libav "extras" packages along with other codec support may be necessary
+ for some video formats.
+-A reasonably fast computer (live transcoding can be extremely taxing)
 
 Original article by "apoc" for creation of this tool:
 
@@ -45,7 +48,9 @@ Released under public domain
 
 http://tango.freedesktop.org
 
-Flowplayer is released under the GPLv3
+Flowplayer is released under a slightly modified version of GPLv3:
+
+http://flowplayer.org/download/licenses/license_gpl.html
 
 http://flowplayer.org
 
