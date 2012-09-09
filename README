@@ -34,7 +34,7 @@ Installation:
 -Edit the includes/config.inc.php script, make sure to specify the media path
  and that the read privileges are correct.
 -Make sure that shell_exec() is enabled.
--Make sure the images/screenshots/ folder is writeable by your server (probably
+-Make sure the images/screenshots/ folder and the logs folder are writeable by your server (probably
  'www-data' user or something for Apache)
 
 Support:

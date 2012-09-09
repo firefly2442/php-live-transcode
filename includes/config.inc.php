@@ -41,7 +41,8 @@ define('FFMPEG_PRIORITY', '15');
 /* how many bytes should fread() read from stdout of FFmpeg? */
 define('CHUNKSIZE', 500*1024);
 
-/* very useful debug information. logs stderr of ffmpeg! */
+/* very useful debug information. logs stderr of ffmpeg! Make sure this is writeable by
+   your server */
 define('DEBUG_LOG', 'logs/output.log');
 
 /* the folder where all the media to be served up is
@@ -52,7 +53,9 @@ define('MEDIA_PATH', '/srv/media');
 $mediatypes = array(".mkv", ".avi", ".mov", ".mpg", "mpeg", ".ogv", ".ogg");
 define("MEDIATYPES", serialize($mediatypes));
 
-/* Full URL path */
+/* Full URL path.  Note that this is the only URL through which the streaming will probably work.
+   If you are doing testing via localhost or via a local network, make sure the URL here is set
+   appropriately. */
 define("BASE_URL", "http://yourdomainhere.com/php-live-transcode/");
 
 
