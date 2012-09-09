@@ -49,7 +49,7 @@ define('DEBUG_LOG', 'logs/output.log');
 define('MEDIA_PATH', '/srv/media');
 
 /* This will limit the displaying and linking to files with these extensions on the index.php page. */
-$mediatypes = array(".mkv", ".avi", ".mov", ".mpg", ".ogv", ".ogg");
+$mediatypes = array(".mkv", ".avi", ".mov", ".mpg", "mpeg", ".ogv", ".ogg");
 define("MEDIATYPES", serialize($mediatypes));
 
 /* Full URL path */
