@@ -45,7 +45,7 @@ define('CHUNKSIZE', 500*1024);
    your server */
 define('DEBUG_LOG', 'logs/output.log');
 
-/* the folder where all the media to be served up is
+/* the folder where all the media to be served up is, all subfolders will also be searched,
    make sure php can read it (openbasedir etc.) */
 define('MEDIA_PATH', '/srv/media');
 
