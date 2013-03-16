@@ -41,7 +41,7 @@ function saveScreenshots($mediainfo)
 		//Pick 5 evenly spaced screenshots from the video
 		for ($i = 1; $i < THUMBNAILS+1; $i++)
 		{
-			$time = round(($i/(THUMBNAILS+1)) * $mediainfo->length);
+			$time = getTime($mediainfo, $i);
 
 			//http://ffmpeg.org/ffmpeg.html
 			//http://www.php-code.net/2010/07/capturing-multiple-thumbnails-from-a-movie-using-ffmpeg/
@@ -61,4 +61,17 @@ function saveScreenshots($mediainfo)
 			$console = shell_exec($mplayer_query);
 		}
 	}
+}
+
+function getTime($mediainfo, $i)
+{
+	return round(($i/(THUMBNAILS+1)) * $mediainfo->length);
+}
+
+function convertSecondsToString($seconds)
+{
+	$h = str_pad($seconds / 3600 % 24, 2, "0", STR_PAD_LEFT);
+	$m = str_pad($seconds / 60 % 60, 2, "0", STR_PAD_LEFT);
+	$s = str_pad($seconds % 60, 2, "0", STR_PAD_LEFT);
+	return $h.":".$m.":".$s;
 }

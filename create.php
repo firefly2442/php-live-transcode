@@ -59,7 +59,8 @@ require_once("includes/pull-screenshots.inc.php");
 
 			//display images
 			for ($i = 1; $i < THUMBNAILS+1; $i++) {
-				echo "<img src='./images/screenshots/".filename."_".$i.".jpg' />\n";
+				$time = getTime($mediainfo, $i);
+				echo "<img src='./images/screenshots/".filename."_".$i.".jpg' alt='".convertSecondsToString($time)."' title='".convertSecondsToString($time)."' />\n";
 			}
 		} else {
 			echo "<p>Insufficient privileges to generate thumbnail preview images.</p>\n";
