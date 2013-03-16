@@ -37,11 +37,25 @@ else {
 	<link rel="shortcut icon" href="favicon.ico" >
 	<title>php-live-transcode</title>
 	<?php
-	if ($_POST['player'] == 'flash') {
+	if ($_POST['player'] == 'flash') { //flowplayer (flash version)
 		echo "<script src='flowplayer/flowplayer-3.2.12.min.js'></script>";
 		echo "<style type='text/css' media='screen'>";
 		echo "#flowplayer {";
 			echo "display: block;";
+			echo "width: " . $size[0] . "px;";
+			echo "height: " . $size[1] . "px;";
+		echo "}";
+		echo "</style>\n";
+	}
+	else if ($_POST['player'] == 'flowplayer-html5') { //flowplayer (HTML5 version)
+		//JQuery is required
+		echo "<script type='text/javascript' src='./javascript/jquery-1.9.1.min.js'></script>\n";
+		//player skin
+		echo "<link rel='stylesheet' type='text/css' href='./flowplayerhtml5/skin/minimalist.css' />\n";
+		echo "<script src='./flowplayerhtml5/flowplayer.min.js'></script>\n";
+		//http://flowplayer.org/docs/#video-size
+		echo "<style type='text/css' media='screen'>";
+		echo ".flowplayer {";
 			echo "width: " . $size[0] . "px;";
 			echo "height: " . $size[1] . "px;";
 		echo "}";
@@ -67,12 +81,21 @@ else {
             echo "<audio src='".$transcode_url."' preload controls> your browser must support html5/audio tag</audio>\n";
         }
 	}
-    else if ($_POST['player'] == 'flash') {
+    else if ($_POST['player'] == 'flash') { //flowplayer (flash version)
         echo "<div id='flowplayer'></div>\n";
         echo "<script>\n";
 			echo "flowplayer('flowplayer', '".BASE_URL."flowplayer/flowplayer-3.2.16.swf', {clip: {url: '".$transcode_url."'}});";
         echo "</script>\n";
     }
+	else if ($_POST['player'] == 'flowplayer-html5') { //flowplayer (HTML5 version)
+		//http://flowplayer.org/docs/
+		//This will default to HTML5 but fallback to Flash if necessary
+		echo "<div class='flowplayer'>\n";
+   		echo "<video>\n";
+      		echo "<source src='".$transcode_url."'/>\n";
+   		echo "</video>\n";
+		echo "</div>\n";
+	}
 	?>
 
 <br><hr>

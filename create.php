@@ -168,6 +168,7 @@ require_once("includes/pull-screenshots.inc.php");
         <select name="player" id="player">
             <option value="html5">HTML5</option>
             <option value="flash">Flash (flowplayer)</option>
+			<option value="flowplayer-html5">HTML5 (flowplayer)</option>
         </select>
 
         <label for="bitrate">Set Bitrate (Video Bitrate / Audio Bitrate)</label>
