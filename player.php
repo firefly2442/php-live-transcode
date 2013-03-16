@@ -36,7 +36,7 @@ else {
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link rel="shortcut icon" href="favicon.ico" >
 	<title>php-live-transcode</title>
-	<script src="flowplayer/flowplayer-3.2.11.min.js"></script>
+	<script src="flowplayer/flowplayer-3.2.12.min.js"></script>
 
 	<style type="text/css" media="screen">
 	#flowplayer {
@@ -67,7 +67,7 @@ else {
     else if ($_POST['player'] == 'flash') {
         echo "<div id='flowplayer'></div>\n";
         echo "<script>\n";
-			echo "flowplayer('flowplayer', '".BASE_URL."flowplayer/flowplayer-3.2.14.swf', {clip: {url: '".$transcode_url."'}});";
+			echo "flowplayer('flowplayer', '".BASE_URL."flowplayer/flowplayer-3.2.16.swf', {clip: {url: '".$transcode_url."'}});";
         echo "</script>\n";
     }
 	?>
