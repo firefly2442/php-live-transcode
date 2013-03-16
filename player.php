@@ -36,15 +36,18 @@ else {
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link rel="shortcut icon" href="favicon.ico" >
 	<title>php-live-transcode</title>
-	<script src="flowplayer/flowplayer-3.2.12.min.js"></script>
-
-	<style type="text/css" media="screen">
-	#flowplayer {
-		display: block;
-		width: <?php echo $size[0]; ?>px;
-		height: <?php echo $size[1]; ?>px;
+	<?php
+	if ($_POST['player'] == 'flash') {
+		echo "<script src='flowplayer/flowplayer-3.2.12.min.js'></script>";
+		echo "<style type='text/css' media='screen'>";
+		echo "#flowplayer {";
+			echo "display: block;";
+			echo "width: " . $size[0] . "px;";
+			echo "height: " . $size[1] . "px;";
+		echo "}";
+		echo "</style>\n";
 	}
-	</style>
+	?>
 </head>
 <body>
     <h1>Video Stream</h1>
