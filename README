@@ -11,8 +11,6 @@ Overview:
 This program uses ffmpeg to do live transcoding of video for display via
 HTML5 using either HTML5 video or Flash (using flowplayer).
 
-http://www.rivetcode.com
-
 Requirements:
 
 -Linux OS
@@ -36,10 +34,6 @@ Installation:
 -Make sure that shell_exec() is enabled.
 -Make sure the images/screenshots/ folder and the logs folder are writeable by your server (probably
  'www-data' user or something for Apache)
-
-Support:
-
-http://forums.rivetcode.com
 
 3rd Party:
 
