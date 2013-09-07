@@ -71,7 +71,7 @@ recursiveDirectory(MEDIA_PATH)
 ?>
 
 <br><hr>
-<center><a href="http://www.rivetcode.com">php-live-transcode</a>
+<center><a href="https://github.com/firefly2442/php-live-transcode/">php-live-transcode</a>
 <br>Version: <?php echo VERSION;?></center>
 </body>
 </html>
