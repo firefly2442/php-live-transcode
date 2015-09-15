@@ -36,7 +36,7 @@ require_once("includes/pull-screenshots.inc.php");
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link rel="shortcut icon" href="favicon.ico" >
 	<title>php-live-transcode</title>
-	<script type="text/javascript" src="./javascript/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="./javascript/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="./javascript/create.js"></script>
 </head>
 <body>

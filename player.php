@@ -49,7 +49,7 @@ else {
 	}
 	else if ($_POST['player'] == 'flowplayer-html5') { //flowplayer (HTML5 version)
 		//JQuery is required
-		echo "<script type='text/javascript' src='./javascript/jquery-1.9.1.min.js'></script>\n";
+		echo "<script type='text/javascript' src='./javascript/jquery-1.11.3.min.js'></script>\n";
 		//player skin
 		echo "<link rel='stylesheet' type='text/css' href='./flowplayerhtml5/skin/minimalist.css' />\n";
 		echo "<script src='./flowplayerhtml5/flowplayer.min.js'></script>\n";

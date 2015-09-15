@@ -51,7 +51,7 @@ function recursiveDirectory($path = '.', $level = 0) {
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="./javascript/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="./javascript/jquery-1.11.3.min.js"></script>
 	<link rel="shortcut icon" href="favicon.ico" >
 	<title>php-live-transcode</title>
 </head>
