@@ -74,7 +74,7 @@ else if ($args['acodec'] == 'libfaac') $mime = 'audio/x-aac';
 if(!empty($mime)) header('Content-Type: '.$mime);
 
 /* build ffmpeg command */
-if(defined("FFMPEG_VERSION") {
+if(defined("FFMPEG_VERSION")) {
 	$cmd = FFMPEG;
 } else if (defined("AVCONV_VERSION")) {
 	$cmd = AVCONV;
