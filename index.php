@@ -29,7 +29,7 @@ function recursiveDirectory($path = '.', $level = 0) {
 				echo "$(\"#".$unique_id."\").hide();\n";
 
 				echo "$(\"#folder_".$unique_id."\").click(function () {\n";
-				echo "$(\"#".$unique_id."\").show('fast');\n";
+				echo "$(\"#".$unique_id."\").toggle();\n";
 				echo "});</script>\n";
 			} else {
 				//Make sure it's an approved extension
