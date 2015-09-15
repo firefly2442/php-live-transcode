@@ -81,22 +81,37 @@ function errorMessage($message)
 
 
 
-/* test for ffmpeg and mplayer */
+/* test for mplayer */
 if(!preg_match('/mplayer (\S+)/', strtolower(shell_exec(MPLAYER)), $mplayer_version)){
     errorMessage("MPlayer not found. (".MPLAYER.")");
 }
 define('MPLAYER_VERSION', $mplayer_version[1]);
 
-if(!preg_match('/ffmpeg (\S+)/', strtolower(shell_exec(FFMPEG.' -version')) ,$ffmpeg_version)){
-     errorMessage("FFmpeg not found. (".FFMPEG.")");
+/* test for ffmpeg or avconv transcoder */
+if(preg_match('/ffmpeg (\S+)/', strtolower(shell_exec(FFMPEG.' -version')), $ffmpeg_version)){
+	define('FFMPEG_VERSION', $ffmpeg_version[1]);
 }
-define('FFMPEG_VERSION', $ffmpeg_version[1]);
+if(preg_match('/avconv (\S+)/', strtolower(shell_exec(AVCONV.' -version')), $avconv_version)){
+	define('AVCONV_VERSION', $avconv_version[1]);
+}
+
+if(!defined("FFMPEG_VERSION") && !defined("AVCONV_VERSION")) {
+     errorMessage("ffmpeg not found: (".FFMPEG.") - avconv not found: (".AVCONV.")");
+}
+
 
 /* check running ffmpeg instances */
 $instances = `ps -A | grep ffmpeg | wc -l`;
 $instances = (int)(trim($instances));
-if ($instances > FFMPEG_MAX_INSTANCES){
-    errorMessage("There are too many running instances of ffmpeg. (".$instances."/".FFMPEG_MAX_INSTANCES.")");
+if ($instances > MAX_INSTANCES){
+    errorMessage("There are too many running instances of ffmpeg. (".$instances."/".MAX_INSTANCES.")");
+}
+
+if(!is_writable("./images/screenshots/")) {
+	errorMessage("The ./images/screenshots/ folder is not writeable by the webserver.");
+}
+if(file_exists(DEBUG_LOG) && !is_writable(DEBUG_LOG)) {
+	errorMessage(DEBUG_LOG." is not writeable by the webserver.");
 }
 
 

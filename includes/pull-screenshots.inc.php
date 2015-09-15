@@ -35,6 +35,12 @@ function saveScreenshots($mediainfo)
 		-s thumbnail size
 	*/
 
+	if(defined("FFMPEG_VERSION")) {
+		$transcoder = FFMPEG;
+	} else if (defined("AVCONV_VERSION")) {
+		$transcoder = AVCONV;
+	}
+
 	//if the file already exists, don't bother with regenerating thumbnails
 	if (!file_exists("./images/screenshots/".filename."_1.jpg"))
 	{
@@ -48,9 +54,9 @@ function saveScreenshots($mediainfo)
 
 			//use appropriate aspect ratio for thumbnails
 			if ($mediainfo->aspect_string == "16:9") { //use widescreen
-				$mplayer_query = FFMPEG.' -ss '.$time.' -i '.path.'/'.filename.' -y -vframes 1 -s 480x240 ./images/screenshots/'.filename.'_'.$i.'.jpg';
+				$mplayer_query = $transcoder.' -ss '.$time.' -i '.path.'/'.filename.' -y -vframes 1 -s 480x240 ./images/screenshots/'.filename.'_'.$i.'.jpg';
 			} else { //default to 4:3
-				$mplayer_query = FFMPEG.' -ss '.$time.' -i '.path.'/'.filename.' -y -vframes 1 -s 480x360 ./images/screenshots/'.filename.'_'.$i.'.jpg';
+				$mplayer_query = $transcoder.' -ss '.$time.' -i '.path.'/'.filename.' -y -vframes 1 -s 480x360 ./images/screenshots/'.filename.'_'.$i.'.jpg';
 			}
 
 
