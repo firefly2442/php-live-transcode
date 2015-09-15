@@ -22,26 +22,28 @@
 */
 
 
-
+/* will try both ffmpeg and avconv for transcoding */
 /* used for transcoding*/
 define('FFMPEG', 'ffmpeg');
+/* used for transcoding*/
+define('AVCONV', 'avconv');
 /* used to gather file information */
 define('MPLAYER', 'mplayer');
 
-/* how many ffmpeg instances are allowed to run (thats x concurrent viewers) */
-define('FFMPEG_MAX_INSTANCES', '3');
+/* how many transcoding instances are allowed to run (thats x concurrent viewers) */
+define('MAX_INSTANCES', '3');
 
-/* how many threads should ffmpeg use? 0 means that it will select the optimal number of threads */
+/* how many threads should ffmpeg/avconv use? 0 means that it will select the optimal number of threads */
 //This doesn't work for some codecs
-//define('FFMPEG_THREADS', 0);
+//define('THREADS', 0);
 
 /* man nice */
-define('FFMPEG_PRIORITY', '15');
+define('PRIORITY', '15');
 
-/* how many bytes should fread() read from stdout of FFmpeg? */
+/* how many bytes should fread() read from stdout of ffmpeg/avconv? */
 define('CHUNKSIZE', 500*1024);
 
-/* very useful debug information. logs stderr of ffmpeg! Make sure this is writeable by
+/* very useful debug information. logs stderr of transcoding. Make sure this is writeable by
    your server */
 define('DEBUG_LOG', 'logs/output.log');
 
