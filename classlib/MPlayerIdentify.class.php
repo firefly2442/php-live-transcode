@@ -57,6 +57,8 @@ class MPlayerIdentify
 		//If it's within +/- .03 of the aspect ratio, save special string
 		if ($this->aspect > 1.74 && $this->aspect < 1.8) {
 			$this->aspect_string = "16:9";
+		} else if ($this->aspect > 1.57 && $this->aspect < 1.63) {
+			$this->aspect_string = "16:10";
 		} else if ($this->aspect > 1.3 && $this->aspect < 1.36) {
 			$this->aspect_string = "4:3";
 		}
