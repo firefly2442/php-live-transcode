@@ -38,7 +38,7 @@ else {
 	<title>php-live-transcode</title>
 	<?php
 	if ($_POST['player'] == 'flash') { //flowplayer (flash version)
-		echo "<script src='flowplayer/flowplayer-3.2.12.min.js'></script>";
+		echo "<script src='flowplayer/flowplayer-3.2.13.min.js'></script>";
 		echo "<style type='text/css' media='screen'>";
 		echo "#flowplayer {";
 			echo "display: block;";
