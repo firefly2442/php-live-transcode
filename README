@@ -8,7 +8,7 @@ https://github.com/firefly2442/php-live-transcode
 
 Overview:
 
-This program uses ffmpeg to do live transcoding of video for display via
+This program uses ffmpeg/avconv to do live transcoding of video for display via
 HTML5 using either HTML5 video or Flash (using flowplayer).
 
 Requirements:
@@ -18,8 +18,7 @@ Requirements:
 -Webserver (Apache is good)
 -ffmpeg
 -mplayer
--The libav "extras" packages along with other codec support may be necessary
- for some video formats.
+-The libav "extras" packages along with other codec support may be necessary for some video formats.
 -A reasonably fast computer (live transcoding can be extremely taxing)
 
 Original article by "apoc" for creation of this tool:
@@ -29,11 +28,9 @@ http://sixserv.org/2010/11/30/live-transcoding-for-video-and-audio-streaming/
 Installation:
 
 -Copy the folder to your web directory (usually /var/www/).
--Edit the includes/config.inc.php script, make sure to specify the media path
- and that the read privileges are correct.
+-Edit the includes/config.inc.php script, make sure to specify the media path and that the read privileges are correct.
 -Make sure that shell_exec() is enabled.
--Make sure the images/screenshots/ folder and the logs folder are writeable by your server (probably
- 'www-data' user or something for Apache)
+-Make sure the images/screenshots/ folder and the logs folder are writeable by your server (probably 'www-data' user or something for Apache)
 
 3rd Party:
 
@@ -44,7 +41,7 @@ http://tango.freedesktop.org
 
 Flowplayer is released under a slightly modified version of GPLv3:
 
-http://flowplayer.org/download/licenses/license_gpl.html
+http://flowplayer.org/license/
 
 http://flowplayer.org
 
