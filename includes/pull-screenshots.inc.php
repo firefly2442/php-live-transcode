@@ -54,9 +54,9 @@ function saveScreenshots($mediainfo)
 
 			//use appropriate aspect ratio for thumbnails
 			if ($mediainfo->aspect_string == "16:9" || $mediainfo->aspect_string == "16:10") { //use widescreen 16:9 aspect ratio
-				$transcode_query = $transcoder." -ss ".$time." -i '".realpath(path."/".filename)."' -y -vframes 1 -s 480x240 ./images/screenshots/".filename."_".$i.".jpg";
+				$transcode_query = $transcoder." -ss ".$time." -i '".realpath(path."/".filename)."' -y -vframes 1 -s 480x240 './images/screenshots/".filename."_".$i.".jpg'";
 			} else { //default to 4:3
-				$transcode_query = $transcoder." -ss ".$time." -i '".realpath(path."/".filename)."' -y -vframes 1 -s 480x360 ./images/screenshots/".filename."_".$i.".jpg";
+				$transcode_query = $transcoder." -ss ".$time." -i '".realpath(path."/".filename)."' -y -vframes 1 -s 480x360 './images/screenshots/".filename."_".$i.".jpg'";
 			}
 
 
