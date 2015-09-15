@@ -13,4 +13,10 @@ if (!$_SESSION['php-live-transcode-loggedin'])
 	exit();
 }
 
+function displayLoginInformation() {
+	if (PASSWORD != "") {
+		echo "<a href='authenticate.php?status=logout'><img src='./images/logout.png' title='Logout' alt='Logout' /> Logout</a>";
+	}
+}
+
 ?>

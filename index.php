@@ -59,7 +59,7 @@ function recursiveDirectory($path = '.', $level = 0) {
 
 <h1>Stream Video File</h1>
 
-<a href="authenticate.php?status=logout"><img src="./images/logout.png" title="Logout" alt="Logout" /> Logout</a>
+<?php displayLoginInformation(); ?>
 <div id="header-nav">
 	<p><u>Select Video</u> -> Pick Decoding Settings -> Watch Video</p>
 </div>
