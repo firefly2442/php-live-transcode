@@ -53,10 +53,10 @@ function saveScreenshots($mediainfo)
 			//http://www.php-code.net/2010/07/capturing-multiple-thumbnails-from-a-movie-using-ffmpeg/
 
 			//use appropriate aspect ratio for thumbnails
-			if ($mediainfo->aspect_string == "16:9") { //use widescreen
-				$mplayer_query = $transcoder.' -ss '.$time.' -i '.path.'/'.filename.' -y -vframes 1 -s 480x240 ./images/screenshots/'.filename.'_'.$i.'.jpg';
+			if ($mediainfo->aspect_string == "16:9" || $mediainfo->aspect_string == "16:10") { //use widescreen 16:9 aspect ratio
+				$transcode_query = $transcoder." -ss ".$time." -i '".realpath(path."/".filename)."' -y -vframes 1 -s 480x240 ./images/screenshots/".filename."_".$i.".jpg";
 			} else { //default to 4:3
-				$mplayer_query = $transcoder.' -ss '.$time.' -i '.path.'/'.filename.' -y -vframes 1 -s 480x360 ./images/screenshots/'.filename.'_'.$i.'.jpg';
+				$transcode_query = $transcoder." -ss ".$time." -i '".realpath(path."/".filename)."' -y -vframes 1 -s 480x360 ./images/screenshots/".filename."_".$i.".jpg";
 			}
 
 
@@ -64,7 +64,7 @@ function saveScreenshots($mediainfo)
 			//This works and is fast but you can't set the resolution or the filename
 			//$mplayer_query = MPLAYER.' -nosound -vo jpeg:outdir=./images/screenshots/ -frames 1 -ss '.$time.' '.path.'/'.filename;
 
-			$console = shell_exec($mplayer_query);
+			$console = shell_exec($transcode_query);
 		}
 	}
 }
