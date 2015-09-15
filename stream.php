@@ -74,7 +74,12 @@ else if ($args['acodec'] == 'libfaac') $mime = 'audio/x-aac';
 if(!empty($mime)) header('Content-Type: '.$mime);
 
 /* build ffmpeg command */
-$cmd = FFMPEG;
+if(defined("FFMPEG_VERSION") {
+	$cmd = FFMPEG;
+} else if (defined("AVCONV_VERSION")) {
+	$cmd = AVCONV;
+}
+
 if(!empty($args['seek']))
     $cmd .= " -ss ".$args['seek'];
 $cmd .= " -y -i \"$mediafile\" ";
@@ -97,7 +102,7 @@ if(!empty($args['container']))
 
 //add number of threads to use
 //This isn't supported by some codecs
-//$cmd .= " -threads ".FFMPEG_THREADS;
+//$cmd .= " -threads ".THREADS;
 
 if(!empty($args['audio_stream']))
     $cmd .= " -map 0.0:0.0 -map 0.".$args['audio_stream'].":0.1";
@@ -106,17 +111,17 @@ if(!empty($args['audio_stream']))
 if($args['vcodec'] == 'libx264') $cmd .= " -vpre ".$args['vpre']."_firstpass -vpre ".$args['vpre2'];
 if($args['vcodec'] == 'flv') $cmd .= ' -ar 22050';
 
-$cmd .= " pipe:1"; // ffmpeg should output to stdout (other messages to stderr)
+$cmd .= " pipe:1"; // ffmpeg/avconv should output to stdout (other messages to stderr)
 
-/* execute ffmpeg */
+/* execute transcode */
 $descriptorspec = array(
    P_STDIN => array("pipe", "r"),  // stdin (we write the process reads)
    P_STDOUT => array("pipe", "w"),  // stdout (we read the process writes)
    P_STDERR => array("pipe", "w")   // stderr (we read the process writes)
 );
-$process = proc_open("nice -n ".FFMPEG_PRIORITY." ".$cmd, $descriptorspec, $pipes);
+$process = proc_open("nice -n ".PRIORITY." ".$cmd, $descriptorspec, $pipes);
 
-dbg("Started FFmpeg process.\nCommand Line: $cmd");
+dbg("Started transcode process.\nCommand Line: $cmd");
 
 $stdout_size = 0;
 if (is_resource($process)) {
