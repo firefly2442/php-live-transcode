@@ -84,7 +84,7 @@ else {
     else if ($_POST['player'] == 'flash') { //flowplayer (flash version)
         echo "<div id='flowplayer'></div>\n";
         echo "<script>\n";
-			echo "flowplayer('flowplayer', '".BASE_URL."flowplayer/flowplayer-3.2.16.swf', {clip: {url: '".$transcode_url."'}});";
+			echo "flowplayer('flowplayer', '".BASE_URL."flowplayer/flowplayer-3.2.18.swf', {clip: {url: '".$transcode_url."'}});";
         echo "</script>\n";
     }
 	else if ($_POST['player'] == 'flowplayer-html5') { //flowplayer (HTML5 version)
