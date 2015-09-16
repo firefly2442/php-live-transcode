@@ -63,6 +63,15 @@ function secondsToString($seconds) {
     return substr($s, 0, -2);
 }
 
+function join_paths() {
+	//since we don't have anything like os.path.join in python    
+	$paths = array();
+    foreach (func_get_args() as $arg) {
+        if ($arg !== '') { $paths[] = $arg; }
+    }
+    return preg_replace('#/+#','/',join('/', $paths));
+}
+
 
 /* just a very simple debug logger */
 function dbg($message)
@@ -117,7 +126,7 @@ if(file_exists(DEBUG_LOG) && !is_writable(DEBUG_LOG)) {
 
 /* gather mediafile */
 if(isset($_GET["media"]) && $_GET["media"] != ""){
-    $mediafile = MEDIA_PATH . $_GET["media"];
+	$mediafile = join_paths(MEDIA_PATH, $_GET["media"]);
 
 	if(strstr($mediafile, '..') !== false){ /* directory traversal */
 		errorMessage("Illegal characters in directory traversal."); //security feature
@@ -128,12 +137,10 @@ if(isset($_GET["media"]) && $_GET["media"] != ""){
 		$mediaext = $match[1];
 	}
 	if(!file_exists($mediafile)){
-		$orig_mediafile = $mediafile;
-
 		/* look for existing mediafile without last extension */
 		$mediafile = preg_replace('/\.[^\.]+$/','',$mediafile);
 		if(!file_exists($mediafile)){
-		    errorMessage("Mediafile does not exist. (".htmlentities($orig_mediafile).")");
+		    errorMessage("Mediafile does not exist. (".htmlentities($mediafile).")");
 		}
 	}
 
