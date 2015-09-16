@@ -104,8 +104,9 @@ if(!empty($args['container']))
 //This isn't supported by some codecs
 //$cmd .= " -threads ".THREADS;
 
+//https://ffmpeg.org/pipermail/ffmpeg-user/2011-November/003225.html
 if(!empty($args['audio_stream']))
-    $cmd .= " -map 0.0:0.0 -map 0.".$args['audio_stream'].":0.1";
+	$cmd .= " -map 0:0 -map ".$args['audio_stream'].":0";
 
 /* special cases */
 if($args['vcodec'] == 'libx264') $cmd .= " -vpre ".$args['vpre']."_firstpass -vpre ".$args['vpre2'];
