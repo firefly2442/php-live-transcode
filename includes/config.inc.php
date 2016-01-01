@@ -30,7 +30,7 @@ define('AVCONV', 'avconv');
 /* used to gather file information */
 define('MPLAYER', 'mplayer');
 
-/* how many transcoding instances are allowed to run (thats x concurrent viewers) */
+/* how many transcoding instances are allowed to run (x concurrent viewers) */
 define('MAX_INSTANCES', '3');
 
 /* how many threads should ffmpeg/avconv use? 0 means that it will select the optimal number of threads */
