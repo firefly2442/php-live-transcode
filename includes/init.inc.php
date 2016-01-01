@@ -109,11 +109,14 @@ if(!defined("FFMPEG_VERSION") && !defined("AVCONV_VERSION")) {
 }
 
 
-/* check running ffmpeg instances */
-$instances = `ps -A | grep ffmpeg | wc -l`;
-$instances = (int)(trim($instances));
+/* check running ffmpeg/avconv instances */
+$instances_ffmpeg = `ps -A | grep ffmpeg | wc -l`;
+$instances_ffmpeg = (int)(trim($instances_ffmpeg));
+$instances_avconv = `ps -A | grep avconv | wc -l`;
+$instances_avconv = (int)(trim($instances_avconv));
+$instances = $instances_avconv + $instances_ffmpeg;
 if ($instances > MAX_INSTANCES){
-    errorMessage("There are too many running instances of ffmpeg. (".$instances."/".MAX_INSTANCES.")");
+    errorMessage("There are too many running instances of ffmpeg/avconv. (".$instances."/".MAX_INSTANCES.")");
 }
 
 if(!is_writable("./images/screenshots/")) {
