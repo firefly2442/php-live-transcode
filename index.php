@@ -15,7 +15,7 @@ function recursiveDirectory($path = '.', $level = 0) {
 		//Ignore directories back
 		if ($file != "." && $file != "..") {
 
-			if (is_dir( "$path/$file")) {
+			if (is_dir("$path/$file")) {
 				//It's a directory, continue reading
 				//div id's can't have periods or other weird characters so we generate a unique ID
 				$unique_id = uniqid("unique_");
@@ -35,7 +35,7 @@ function recursiveDirectory($path = '.', $level = 0) {
 				//Make sure it's an approved extension
 				if (in_array(substr($file, -4), $media)) {
 					$folder = str_replace(MEDIA_PATH, "", $path);
-					echo "<a href=\"create.php?media=".$folder."/".$file."\">".$file."</a><br>\n";
+					echo "<a href=\"create.php?media=".urlencode($folder."/".$file)."\">".$file."</a><br>\n";
 				}
 			}
 		}

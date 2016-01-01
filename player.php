@@ -13,7 +13,7 @@ foreach($_POST as $key=>$value){
 //BASE_URL is required otherwise it won't work!
 $transcode_url = BASE_URL . "stream.php/".implode(';', $transcode_args);
 $transcode_url .= '/'.basename($mediafile);
-$transcode_url .= "?media=" . $_GET['media'];
+$transcode_url .= "?media=" . urlencode($_GET['media']);
 
 if($_POST['container'] == 'ogg' && $mediatype == 'video')
     $transcode_url .= '.ogv';
@@ -68,7 +68,7 @@ else {
 
 	<?php displayLoginInformation(); ?>
 	<div id="header-nav">
-		<p><a href="index.php">Select Video</a> -> <a href="create.php?media=<?php echo $_GET['media']; ?>">Pick Decoding Settings</a> -> <u>Watch Video</u></p>
+		<p><a href="index.php">Select Video</a> -> <a href="create.php?media=<?php echo urlencode($_GET['media']); ?>">Pick Decoding Settings</a> -> <u>Watch Video</u></p>
 	</div>
 
     <?php

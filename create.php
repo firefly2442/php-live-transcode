@@ -60,7 +60,7 @@ require_once("includes/pull-screenshots.inc.php");
 			//display images
 			for ($i = 1; $i < THUMBNAILS+1; $i++) {
 				$time = getTime($mediainfo, $i);
-				echo "<img src='./images/screenshots/".filename."_".$i.".jpg' alt='".convertSecondsToString($time)."' title='".convertSecondsToString($time)."' />\n";
+				echo "<img src=\"./images/screenshots/".filename."_".$i.".jpg\" alt='".convertSecondsToString($time)."' title='".convertSecondsToString($time)."' />\n";
 			}
 		} else {
 			echo "<p>Insufficient privileges to generate thumbnail preview images.</p>\n";
@@ -164,7 +164,7 @@ require_once("includes/pull-screenshots.inc.php");
     </ul>
 
 
-    <form name="create_form" method="POST" action="player.php?media=<?php echo htmlentities($_GET['media']); ?>">
+    <form name="create_form" method="POST" action="player.php?media=<?php echo urlencode($_GET['media']); ?>">
         <label for="player">Select Player Technology</label>
         <select name="player" id="player">
             <option value="html5">HTML5</option>

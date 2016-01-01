@@ -126,7 +126,7 @@ if(file_exists(DEBUG_LOG) && !is_writable(DEBUG_LOG)) {
 
 /* gather mediafile */
 if(isset($_GET["media"]) && $_GET["media"] != ""){
-	$mediafile = join_paths(MEDIA_PATH, $_GET["media"]);
+	$mediafile = join_paths(MEDIA_PATH, urldecode($_GET["media"]));
 
 	if(strstr($mediafile, '..') !== false){ /* directory traversal */
 		errorMessage("Illegal characters in directory traversal."); //security feature
