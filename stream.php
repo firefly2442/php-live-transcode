@@ -105,8 +105,9 @@ if(!empty($args['container']))
 //$cmd .= " -threads ".THREADS;
 
 //https://ffmpeg.org/pipermail/ffmpeg-user/2011-November/003225.html
-if(!empty($args['audio_stream']))
-	$cmd .= " -map 0:0 -map ".$args['audio_stream'].":0";
+//TODO: is this needed still? it seems to do a pretty good job of identifying the audio stream automatically now...
+//if(!empty($args['audio_stream']))
+//	$cmd .= " -map 0:0 -map ".$args['audio_stream'].":0";
 
 /* special cases */
 if($args['vcodec'] == 'libx264') $cmd .= " -vpre ".$args['vpre']."_firstpass -vpre ".$args['vpre2'];
@@ -161,6 +162,7 @@ if (is_resource($process)) {
     fwrite($pipes[P_STDIN], "q\r\n");
     fclose($pipes[P_STDIN]);
 
+	dbg("Closing process...");
     $return_value = proc_close($process);
 
     dbg("Process closed with return value: ".$return_value);
